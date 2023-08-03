@@ -41,8 +41,8 @@ function applyTheme(theme) {
         document.querySelectorAll('textarea').forEach(item => item.style.background = 'rgb(223, 223, 223)')
         document.querySelectorAll('input').forEach(item => item.style.background = 'rgb(223, 223, 223)')
         document.querySelectorAll('footer').forEach(item => item.style.background = '#fffafa')
-        document.getElementsByClassName('loading')[0].classList.add('light-theme')
-    } else {
+    }
+    if (theme === 'dark') {
         document.getElementsByClassName('loading')[0].style.background = ''
         document.querySelector('header').style.backgroundColor = ''
         document.querySelectorAll('.title').forEach(item => item.style.color = '')
@@ -56,8 +56,30 @@ function applyTheme(theme) {
         document.querySelectorAll('textarea').forEach(item => item.style.background = '')
         document.querySelectorAll('input').forEach(item => item.style.background = '')
         document.querySelectorAll('footer').forEach(item => item.style.background = '')
-        document.getElementsByClassName('loading')[0].classList.remove('light-theme')
     }
+}
+
+function applyTheme(theme) {
+
+    // Existing code
+
+    if (theme === 'light') {
+        // Existing light theme code
+    }
+
+    if (theme === 'dark') {
+        // Existing dark theme code
+    }
+
+    // Add new code here
+    document.querySelectorAll('.logos p').forEach(item => {
+        if (theme === 'light') {
+            item.style.color = 'rgb(51, 51, 51)';
+        } else {
+            item.style.color = '';
+        }
+    });
+
 }
 
 //display logos
