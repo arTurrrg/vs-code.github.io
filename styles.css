@@ -47,6 +47,11 @@
         align-items: center;
     }
 
+    #contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 
 html {
@@ -228,7 +233,7 @@ main {
 }
 
 #info_abt {
-    align-items: center
+    text-align: center
 }
 
 #about img {
@@ -274,8 +279,6 @@ main {
     min-height: 751px;
     background: #404040;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     padding: 20px 0;
 }
