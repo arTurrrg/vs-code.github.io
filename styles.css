@@ -210,7 +210,8 @@ main {
 }
 
 #info_abt {
-    text-align: center
+    text-align: center;
+    flex-direction: column;
 }
 
 #about img {
