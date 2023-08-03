@@ -38,9 +38,22 @@
         align-items: center;
     }
 
+    .logo_img {
+        width: 150px;
+        margin: 0px 0px 50px;
+    }
+
     .main_info {
         flex-direction: column;
         align-items: center;
+    }
+
+
+    #fname,
+    #email,
+    #topic {
+        display: block;
+        left: 25%;
     }
 }
 
@@ -133,7 +146,7 @@ main {
 .main_info {
     width: 70%;
     display: flex;
-    align-items: center;
+    text-align: center;
     justify-content: space-between;
 }
 
@@ -267,17 +280,6 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px 0;
-}
-
-#contact .div:first-of-type {
-    max-width: 535px;
-    padding: 20px 0;
-}
-
-#contact .div:last-of-type {
-    max-width: 670px;
-    margin: 0 20px;
 }
 
 #contact .info {
@@ -287,48 +289,40 @@ main {
 
 #contact div input,
 textarea {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding-left: 20px;
     border: none;
     background: #222222;
-    color: var(--text)
+    color: var(--text);
+    border-radius: 20px;
+
 }
 
 form,
 textarea {
-    margin: 3% auto;
+    margin: 2% auto;
 }
 
 #fname,
-#email {
+#email,
+#topic {
     width: 320px;
     height: 48px;
-    border-radius: 20px;
-}
-
-#email {
-    margin-left: 5px;
 }
 
 #topic,
 #comm {
     width: 100%;
-    height: 48px;
-    border-radius: 20px;
 }
 
 #comm {
-    height: 170px;
+    height: 140px;
 }
 
 textarea {
     resize: none;
     border: none;
     padding: 15px 20px;
-}
-
-#contact .button {
-    margin-top: 0px;
 }
 
 footer {
@@ -348,7 +342,7 @@ footer .social_buttons {
 
 #copy {
     display: flex;
-    align-items: center;
+    text-align: center;
     color: #787878;
 }
 
