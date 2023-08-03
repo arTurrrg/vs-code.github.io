@@ -228,7 +228,7 @@ main {
 }
 
 #info_abt {
-    text-align: center
+    align-items: center
 }
 
 #about img {
