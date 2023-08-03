@@ -135,3 +135,7 @@ function displayLogos() {
         languages_pg.appendChild(div)
     })
 }
+
+burgerBtn.addEventListener('click', () => {
+    nav.classList.toggle('show');
+});
