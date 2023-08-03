@@ -64,6 +64,19 @@ header {
     z-index: 1;
 }
 
+/* Media query for mobile */
+@media (max-width: 480px) {
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+}
+
 nav {
     display: flex;
     height: 100%;

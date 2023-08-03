@@ -15,6 +15,10 @@ window.onload = async () => {
 
     displayLogos()
 }
+
+if ("ontouchstart" in document.documentElement) {
+}
+
 const themeSwitchers = document.querySelectorAll('.changeTheme')
 
 themeSwitchers.forEach(switcher => {
