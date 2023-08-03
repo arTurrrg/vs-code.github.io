@@ -129,5 +129,13 @@ function displayLogos() {
         div.appendChild(description)
         div.className = 'logos'
         languages_pg.appendChild(div)
+    });
+
+    // add text under logos
+    languagesArray.forEach(item => {
+        const div = document.getElementById(`logos-${item.name}`)
+        const text = document.createElement('p')
+        text.textContent = item.description
+        div.appendChild(text)
     })
 }
