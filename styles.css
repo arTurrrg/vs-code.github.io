@@ -64,15 +64,14 @@ header {
     z-index: 1;
 }
 
-/* Media query for mobile */
 @media (max-width: 480px) {
 
     nav ul {
         flex-direction: column;
     }
 
-    .title {
-        font-size: 1.5rem;
+    nav li {
+        margin: 10px 0;
     }
 
 }
@@ -124,6 +123,7 @@ main {
     min-height: calc(100vh - 80px);
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -131,6 +131,8 @@ main {
 .main_info {
     width: 70%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
 }
 
