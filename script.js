@@ -7,7 +7,7 @@ var typed = new Typed(".typed", {
 
 window.onload = async () => {
     let activeTheme = localStorage.getItem('theme');
-    applyTheme(activeTheme ? activeTheme : 'light')
+    applyTheme(activeTheme ? activeTheme : 'dark')
     setTimeout(() => {
         document.getElementsByClassName('loading')[0].style.display = 'none'
         document.body.style.overflow = 'visible'
