@@ -136,6 +136,6 @@ function displayLogos() {
     })
 }
 
-burgerBtn.addEventListener('click', () => {
+burger.addEventListener('click', () => {
     nav.classList.toggle('show');
-});
+})
