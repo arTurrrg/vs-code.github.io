@@ -9,13 +9,12 @@ window.onload = async () => {
     let activeTheme = localStorage.getItem('theme');
     applyTheme(activeTheme ? activeTheme : 'dark')
     setTimeout(() => {
-        document.getElementsByClassName('loading')[0].classList.add('active');
-        document.body.style.overflow = 'visible';
+        document.getElementsByClassName('loading')[0].style.display = 'none'
+        document.body.style.overflow = 'visible'
     }, 2000);
 
     displayLogos()
-};
-
+}
 const themeSwitchers = document.querySelectorAll('.changeTheme')
 
 themeSwitchers.forEach(switcher => {
