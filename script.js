@@ -12,7 +12,7 @@ window.onload = async () => {
     setTimeout(() => {
         document.getElementsByClassName('loading')[0].style.display = 'none'
         document.body.style.overflow = 'visible'
-    }, 10);
+    }, 1950);
 }
 
 const themeSwitchers = document.querySelectorAll('.changeTheme')
