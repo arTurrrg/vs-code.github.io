@@ -6,14 +6,13 @@ var typed = new Typed(".typed", {
 })
 
 window.onload = async () => {
+    displayLogos()
     let activeTheme = localStorage.getItem('theme');
     applyTheme(activeTheme ? activeTheme : 'dark')
     setTimeout(() => {
         document.getElementsByClassName('loading')[0].style.display = 'none'
         document.body.style.overflow = 'visible'
-    }, 2000);
-
-    displayLogos()
+    }, 10);
 }
 
 const themeSwitchers = document.querySelectorAll('.changeTheme')
@@ -25,38 +24,62 @@ themeSwitchers.forEach(switcher => {
     });
 });
 
+
 function applyTheme(theme) {
+    isLightTheme = theme === 'light';
     document.getElementsByClassName('changeTheme')[theme === 'dark' ? 1 : 0].id = 'active'
     document.getElementsByClassName('changeTheme')[theme === 'dark' ? 0 : 1].id = ''
+    const loading = document.getElementsByClassName('loading')
+    const header = document.querySelector('header')
+    const title = document.querySelectorAll('.title')
+    const sections = document.querySelectorAll('section')
+    const home = document.getElementById('home')
+    const languages_pg = document.getElementById('languages_pg')
+    const logos = document.querySelectorAll('.logos p')
+    const navLinks = document.querySelectorAll('nav a')
+    const themeEl = document.getElementsByClassName('theme')
+    const textAreas = document.querySelectorAll('textarea')
+    const inputs = document.querySelectorAll('input')
+    const footer = document.querySelector('footer')
+    const logoNav = document.getElementById('logo-nav')
+    const burgerMenu = document.querySelector('.burger-menu')
+    const burgerMenuLines = document.querySelectorAll('.burger-menu .line')
+    const page = document.documentElement
     if (theme === 'light') {
-        document.getElementsByClassName('loading')[0].style.background = '#fff'
-        document.querySelector('header').style.backgroundColor = 'rgb(233, 233, 233, 0.9)'
-        document.querySelectorAll('.title').forEach(item => item.style.color = 'rgb(51, 51, 51)')
-        document.querySelectorAll('section').forEach(item => item.style.background = '#fff')
-        document.getElementById('home').style.background = 'rgb(233, 233, 233, 0.9)'
-        document.getElementById('languages_pg').style.background = '#fffafa'
-        document.querySelectorAll('.logos p').forEach(item => item.style.color = 'rgb(51, 51, 51)')
-        document.querySelectorAll('nav a').forEach(item => item.style.background = 'rgb(223, 223, 223)')
-        document.querySelectorAll('nav a').forEach(item => item.style.color = 'rgb(51, 51, 51)')
-        document.getElementById('theme').style.background = 'rgb(233, 233, 233)'
-        document.querySelectorAll('textarea').forEach(item => item.style.background = 'rgb(223, 223, 223)')
-        document.querySelectorAll('input').forEach(item => item.style.background = 'rgb(223, 223, 223)')
-        document.querySelectorAll('footer').forEach(item => item.style.background = '#fffafa')
+        loading[0].style.background = '#fff'
+        header.style.backgroundColor = 'rgb(233, 233, 233, 0.9)'
+        title.forEach(item => item.style.color = 'rgb(51, 51, 51)')
+        sections.forEach(item => item.style.background = '#fff')
+        home.style.background = 'rgb(233, 233, 233, 0.9)'
+        languages_pg.style.background = '#fffafa'
+        logos.forEach(item => item.style.color = 'rgb(51, 51, 51)')
+        navLinks.forEach(item => item.style.color = 'rgb(51, 51, 51)')
+        themeEl[0].style.background = '#676767'
+        textAreas.forEach(item => item.style.background = 'rgb(223, 223, 223)')
+        inputs.forEach(item => item.style.background = 'rgb(223, 223, 223)')
+        footer.style.background = 'rgb(235, 235, 235)'
+        logoNav.style.color = 'rgb(51, 51, 51)'
+        burgerMenu.style.background = 'rgb(223, 223, 223)'
+        burgerMenuLines.forEach(item => item.style.background = 'rgb(61, 61, 51)')
+        page.style.setProperty('--bg-color', 'rgb(235, 235, 235')
     }
     if (theme === 'dark') {
-        document.getElementsByClassName('loading')[0].style.background = ''
-        document.querySelector('header').style.backgroundColor = ''
-        document.querySelectorAll('.title').forEach(item => item.style.color = '')
-        document.querySelectorAll('section').forEach(item => item.style.background = '')
-        document.getElementById('home').style.background = ''
-        document.getElementById('languages_pg').style.background = ''
-        document.querySelectorAll('.logos p').forEach(item => item.style.color = '')
-        document.querySelectorAll('nav a').forEach(item => item.style.background = '')
-        document.querySelectorAll('nav a').forEach(item => item.style.color = '')
-        document.getElementById('theme').style.background = ''
-        document.querySelectorAll('textarea').forEach(item => item.style.background = '')
-        document.querySelectorAll('input').forEach(item => item.style.background = '')
-        document.querySelectorAll('footer').forEach(item => item.style.background = '')
+        loading[0].style.background = ''
+        header.style.backgroundColor = ''
+        title.forEach(item => item.style.color = '')
+        sections.forEach(item => item.style.background = '')
+        home.style.background = ''
+        languages_pg.style.background = ''
+        logos.forEach(item => item.style.color = '')
+        navLinks.forEach(item => item.style.color = '')
+        themeEl[0].style.background = ''
+        textAreas.forEach(item => item.style.background = '')
+        inputs.forEach(item => item.style.background = '')
+        footer.style.background = ''
+        logoNav.style.color = ''
+        burgerMenu.style.background
+        burgerMenuLines.forEach(item => item.style.background = '')
+        page.style.setProperty('--bg-color', '')
     }
 }
 
@@ -132,3 +155,34 @@ function displayLogos() {
         languages_pg.appendChild(div)
     })
 }
+
+const burgerMenu = document.querySelector('.burger-menu')
+const navLinks = document.querySelector('.nav-links')
+const themeToggle = document.querySelector('.theme-toggle')
+const navContent = document.querySelector('nav a')
+const burgerMenuLines = document.querySelectorAll('.burger-menu line')
+const html = document.documentElement
+
+burgerMenu.addEventListener('click', () => {
+    html.classList.toggle('no-scroll')
+    navContent.classList.toggle('active')
+    navLinks.classList.toggle('active')
+    themeToggle.classList.toggle('active')
+    burgerMenu.classList.toggle('active')
+    burgerMenuLines.forEach(line => line.classList.toggle('active'))
+});
+
+const menuLinks = document.querySelectorAll('.nav-links a')
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        html.classList.toggle('no-scroll')
+        navLinks.classList.remove('active')
+        themeToggle.classList.remove('active')
+        burgerMenu.classList.remove('active')
+        burgerMenu.firstChild.classList.remove('active')
+        burgerMenu.lastChild.classList.remove('active')
+    });
+});
+
+
